@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import OrangeButton from "@/components/OrangeButton";
+import HeroImage from "@/components/HeroImage";
 
 export default function Home() {
   const [openHeaderDrop, setOpenHeaderDrop] = useState(false);
@@ -26,7 +28,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="w-full mx-auto p-5 md:px-20 border-b bg-white flex items-center justify-between relative">
+      <header className="w-full  mx-auto p-5 md:px-20 border-b bg-white flex items-center justify-between relative">
           {/* Logo */}
           <Image
             src="/logo.png"
@@ -41,7 +43,7 @@ export default function Home() {
               <Link
                 key={index}
                 href={btn.link}
-                className=" flex items-center test-sm text-[#464646] justify-center hover:bg-[#464646] p-1 rounded-sm hover:text-white transition"
+                className=" flex items-center test-sm text-[#464646] justify-center hover:bg-[#464646] p-2 rounded-sm hover:text-white transition"
               >
                 {btn.text}
               </Link>
@@ -52,9 +54,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
 
             
-            <button className="w-[122px] h-[43px] bg-[#D26C66] rounded-[4px] text-white font-bold text-sm leading-[16px] flex items-center justify-center hover:text-[#464646] transition">
-              Get In Touch
-            </button>
+            <OrangeButton text="Get in Touch" link="#contact"/>
 
             <div className="md:hidden relative">
               <button
@@ -70,7 +70,7 @@ export default function Home() {
                     <Link
                       key={index}
                       href={btn.link}
-                      className="w-full h-11 border-2 border-orange-500 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition"
+                      className="w-full h-11 text-[#464646]  rounded-lg flex items-center justify-center hover:bg-[#464646] hover:text-white transition"
                     >
                       {btn.text}
                     </Link>
@@ -86,26 +86,34 @@ export default function Home() {
 
       <main className="min-h-screen ">
 
-        <section className="w-full min-h-screen bg-[#1E222D] flex items-center justify-center p-20">
+        <section className="w-full min-h-[50vh] bg-[#1E222D] flex items-center justify-center ">
 
-          <div className="flex text-[#CCCCCC]  gap-10 m-auto">
+          <div className="flex text-[#CCCCCC] md:flex-col lg:flex-row justify-center items-center gap-10 m-20">
 
-            <div className="flex flex-col my-auto">
-              <div className=" flex flex-col">
-                <text className="text-5xl  font-bold">
+            <HeroImage className="hidden md:block lg:hidden" />
+           
+
+            <div className="flex flex-col m-auto gap-10 lg:max-w-[45%]">
+
+              
+               
+
+              <div className=" flex md:gap-5 flex-col  ">
+                <h1 className="text-[clamp(2rem,5vw,4rem)]  font-bold">
                   Advanced Feature to 
                   Grow Your Business
 
-                </text>
-                <text className="text-xl ">
+                </h1>
+                <text className="text-[clamp(1rem,2vw,1.7rem)]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </text>
               </div>
+
+              <HeroImage className="md:hidden" />
+
               <div className="flex gap-5 items-center ">
-                <button>
-                    Get in Touch
-                </button>
-                <button>
+                <OrangeButton text="Get in Touch" link="#contact" className="w-[120px] md:w-[175px] hover:text-[#1E222D]"/>
+                <button className="w-[120px] md:w-[175px] rounded-sm border py-2 hover:bg-[#CCCCCC] hover:text-[#1E222D] hover:border-[#1E222D]">
                    Learn More
                 </button>
               </div>
@@ -145,14 +153,18 @@ export default function Home() {
               alt="Logo"
               width={600}
               height={426}
-              className="w-full h-auto"
+              className="hidden lg:block aspect-[600/426] object-contain max-w-[50%] w-full h-auto"
             />
 
           </div>
 
         </section>
 
-        <section> 
+        <section className="bg-white"> 
+
+          <div className="w-full h-full ">
+
+          </div>
           
         </section>
 
