@@ -1,5 +1,5 @@
 import React from 'react';
-import ServiceCard from '../shared/Card1'; // Assuming your card component is named ServiceCard.tsx
+import ServiceCard from '../shared/ServiceCard'; // Assuming your card component is named ServiceCard.tsx
 import { Mail, MapPin } from 'lucide-react'; // Clean modern stroke icons
 
 export default function ContactSection() {

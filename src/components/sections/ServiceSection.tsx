@@ -1,5 +1,5 @@
 import React from 'react';
-import ServiceCard from '../shared/Card1';
+import ServiceCard from '../shared/ServiceCard';
 
 // Core structural icon imports handled right inside the component bundle
 import { RiSmartphoneFill } from 'react-icons/ri'; 
