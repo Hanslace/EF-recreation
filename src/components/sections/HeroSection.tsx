@@ -4,9 +4,9 @@ import HeroImage from '../HeroImage';
 
 export default function HeroSection() {
   return (
-<section className="w-full min-h-[50vh] bg-[#1E222D] flex items-center justify-center ">
+        <section className="w-full min-h-[75vh] bg-[#1E222D] flex items-center justify-center ">
 
-          <div className="flex text-[#CCCCCC] md:flex-col lg:flex-row justify-center items-center gap-10 m-20">
+          <div className="flex text-[#CCCCCC] max-w-7xl md:flex-col lg:flex-row justify-center items-center gap-10 m-20">
 
             <HeroImage className="hidden md:block lg:hidden" />
            
@@ -17,12 +17,12 @@ export default function HeroSection() {
                
 
               <div className=" flex md:gap-5 flex-col  ">
-                <h1 className="text-[clamp(2rem,5vw,4rem)]  font-bold">
+                <h1 className="text-[clamp(1.5rem,4vw,3rem)]  font-bold">
                   Advanced Feature to 
                   Grow Your Business
 
                 </h1>
-                <p className="text-[clamp(1rem,2vw,1.7rem)]">
+                <p className="text-[clamp(1rem,2vw,1.5rem)]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
