@@ -36,7 +36,7 @@ export default function HeroSection() {
                 </button>
               </div>
               <div className="flex flex-col  ">
-                <div className=""> 
+                <div className="pb-3"> 
                     Our Top Clients:
                 </div>
                 <div className="flex   gap-10">

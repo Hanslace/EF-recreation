@@ -1,6 +1,6 @@
 "use client"; // 1. Necessary for interactive state tracking
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react"; // Ensure lucide-react is installed
@@ -8,6 +8,21 @@ import OrangeButton from "./OrangeButton";
 
 export default function Header() {
   const [openHeaderDrop, setOpenHeaderDrop] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Track window scroll coordinates to toggle visibility styles
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const buttons = [
     { text: "Home", link: "#home" },
@@ -16,8 +31,18 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white">
-      <div className="max-w-[75vw] w-full mx-auto p-5 md:px-20 border-b bg-white flex items-center gap-10 justify-between relative z-50">
+    // Dynamic transition bindings switch background transparent/solid base on state tracking configurations
+    <header 
+      className={`sticky top-0 z-50 transition-all duration-300 rounded-b-xl ${
+        isScrolled 
+          ? "bg-white/80 backdrop-blur-md shadow-sm" 
+          : "bg-white shadow-none"
+      }`}
+    >
+      {/* Container background matches the header opacity */}
+      <div 
+        className={`max-w-[75vw] w-full mx-auto p-5 md:px-20 border-b flex items-center gap-10 justify-between relative z-50 transition-all duration-300 `}
+      >
         <Image
             src="/logo.png"
             alt="Logo"
@@ -32,7 +57,7 @@ export default function Header() {
             <Link
                 key={index}
                 href={btn.link}
-                className="flex items-center  pt-3text-sm text-[#464646] justify-center hover:bg-[#464646] p-2 rounded-sm hover:text-white transition"
+                className="flex items-center pt-3 text-sm text-[#464646] justify-center hover:bg-[#464646] p-2 rounded-sm hover:text-white transition"
             >
                 {btn.text}
             </Link>
