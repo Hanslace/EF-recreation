@@ -35,7 +35,7 @@ const servicesData = [
         
         {/* Header Block Section */}
         <div className="mb-14 text-center md:text-left">
-          <h2 className="text-[#1E222D] text-[clamp(2rem,4vw,2.5rem)] font-bold tracking-tight">
+          <h2 className="text-[#1E222D] text-[clamp(1.5rem,4vw,2.5rem)] font-bold tracking-tight">
             Core Services We Provide
           </h2>
         </div>

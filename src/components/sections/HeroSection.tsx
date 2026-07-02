@@ -4,7 +4,7 @@ import HeroImage from '../HeroImage';
 
 export default function HeroSection() {
   return (
-        <section className="w-full min-h-[75vh] bg-[#1E222D] flex items-center justify-center p-5">
+        <section className="w-full min-h-[75vh] bg-[#1E222D] flex items-center justify-center p-7">
 
           <div className="flex text-[#CCCCCC] mx-auto md:w-[75vw] md:flex-col lg:flex-row  items-center justify-between my-20">
 
