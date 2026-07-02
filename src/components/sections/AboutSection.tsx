@@ -10,7 +10,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="bg-white">
+    <section id="about" className="bg-white">
         <div className="  py-10 flex flex-col lg:flex-row items-center justify-between gap-16 w-full max-w-7xl mx-auto p-6">
             
                 

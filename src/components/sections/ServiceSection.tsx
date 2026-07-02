@@ -29,7 +29,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="bg-white">
+    <section id="services" className="bg-white ">
       <div className="w-full bg-white py-24 px-6 md:px-20 max-w-7xl mx-auto">
         
         {/* Header Block Section */}
