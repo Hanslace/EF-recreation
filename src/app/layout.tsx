@@ -11,6 +11,9 @@ const nunitoSans = Nunito_Sans({
 export const metadata: Metadata = {
   title: "Easy Fringe",
   description: "Your expert app devs.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -21,7 +24,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`$ ${nunitoSans.className} h-full antialiased `}
+      className={` ${nunitoSans.className} h-full antialiased `}
     >
       <body className="min-h-full flex flex-col bg-white">{children}</body>
     </html>

@@ -32,7 +32,7 @@ export default function Header() {
             <Link
                 key={index}
                 href={btn.link}
-                className="flex items-center text-sm text-[#464646] justify-center hover:bg-[#464646] p-2 rounded-sm hover:text-white transition"
+                className="flex items-center  pt-3text-sm text-[#464646] justify-center hover:bg-[#464646] p-2 rounded-sm hover:text-white transition"
             >
                 {btn.text}
             </Link>

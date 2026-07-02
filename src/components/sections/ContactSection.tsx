@@ -40,7 +40,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="bg-white relative">
+    <section id="contact" className="bg-white relative">
       {/* Floating Success Notification Toast */}
       {showToast && (
         <div className="fixed top-5 right-5 z-50 flex items-center gap-3 p-4 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 shadow-xl max-w-md animate-in slide-in-from-top-4 duration-300 transition-all">
