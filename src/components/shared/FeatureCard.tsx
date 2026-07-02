@@ -28,7 +28,7 @@ export default function FeatureCard({ feature }: FeatureCardProps) {
       </div>
 
       {/* UPDATED: Increased text sizing and tracked spacing configuration for visual balance */}
-      <h3 className="text-[#1E222D] font-bold text-lg md:text-xl tracking-tight leading-tight max-w-[180px]">
+      <h3 className="text-[#1E222D]  text-lg md:text-xl tracking-tight leading-tight max-w-[180px]">
         {feature.title}
       </h3>
     </div>

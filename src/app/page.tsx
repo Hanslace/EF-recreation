@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <>
       <Header/>
-      <main className="min-h-screen ">
+      <main className="min-h-screen bg-white">
 
         <HeroSection/>
 

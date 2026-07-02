@@ -4,14 +4,14 @@ import HeroImage from '../HeroImage';
 
 export default function HeroSection() {
   return (
-        <section className="w-full min-h-[75vh] bg-[#1E222D] flex items-center justify-center ">
+        <section className="w-full min-h-[75vh] bg-[#1E222D] flex items-center justify-center p-5">
 
-          <div className="flex text-[#CCCCCC] max-w-7xl md:flex-col lg:flex-row justify-center items-center gap-10 m-20">
+          <div className="flex text-[#CCCCCC] mx-auto md:w-[75vw] md:flex-col lg:flex-row  items-center justify-between my-20">
 
-            <HeroImage className="hidden md:block lg:hidden" />
+            <HeroImage className="hidden md:block lg:hidden mb-5" />
            
 
-            <div className="flex flex-col m-auto gap-10 lg:max-w-[45%]">
+            <div className="flex flex-col gap-10 lg:max-w-[45%]">
 
               
                
@@ -41,21 +41,21 @@ export default function HeroSection() {
                 </div>
                 <div className="flex   gap-10">
                   <Image
-                    src="/backbone_logo.png"
+                    src="/hero/backbone_logo.png"
                     alt="Logo"
                     height={120}
                     width={120}
                     className="object-contain"
                   />
                   <Image
-                    src="/FEG_logo.png"
+                    src="/hero/FEG_logo.png"
                     alt="Logo"
                     height={120}
                     width={120}
                     className="object-contain"
                   />
                   <Image
-                    src="/UZ_logo.png"
+                    src="/hero/UZ_logo.png"
                     alt="Logo"
                     height={120}
                     width={120}
@@ -67,7 +67,7 @@ export default function HeroSection() {
 
             </div>
             <Image
-              src="/hero_image.png"
+              src="/hero/hero_image.png"
               alt="Logo"
               width={600}
               height={426}

@@ -33,7 +33,7 @@ export default function Header() {
   return (
     // Dynamic transition bindings switch background transparent/solid base on state tracking configurations
     <header 
-      className={`sticky top-0 z-50 transition-all duration-300 rounded-b-xl ${
+      className={`sticky top-0 z-50 transition-all p-5 duration-300  ${
         isScrolled 
           ? "bg-white/80 backdrop-blur-md shadow-sm" 
           : "bg-white shadow-none"
@@ -41,7 +41,7 @@ export default function Header() {
     >
       {/* Container background matches the header opacity */}
       <div 
-        className={`max-w-[75vw] w-full mx-auto p-5 md:px-20 border-b flex items-center gap-10 justify-between relative z-50 transition-all duration-300 `}
+        className={`md:w-[75vw] w-full mx-auto  border-b flex items-center gap-10 justify-between relative z-50 `}
       >
         <Image
             src="/logo.png"
@@ -57,7 +57,7 @@ export default function Header() {
             <Link
                 key={index}
                 href={btn.link}
-                className="flex items-center pt-3 text-sm text-[#464646] justify-center hover:bg-[#464646] p-2 rounded-sm hover:text-white transition"
+                className="flex items-center  text-sm text-[#464646] justify-center hover:bg-[#464646] p-2 rounded-sm hover:text-white transition"
             >
                 {btn.text}
             </Link>

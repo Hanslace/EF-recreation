@@ -10,12 +10,12 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="bg-white">
-        <div className="  py-10 flex flex-col lg:flex-row items-center justify-between gap-16 w-full max-w-7xl mx-auto p-6">
+    <section id="about" className="p-5">
+        <div className="  py-10 flex flex-col lg:flex-row items-center justify-between gap-16 w-full md:w-[75vw] mx-auto ">
             
                 
                 {/* LEFT COLUMN: Handled entirely as a single composite image */}
-                <div className="relative w-full lg:w-1/2 max-w-[540px] aspect-[518/529] mx-auto flex justify-center items-center">
+                <div className="relative w-full lg:w-1/2  aspect-[518/529] mx-auto flex justify-center items-center">
                     <Image
                         src="/about_section.png"
                         alt="About Company visual collage and support badge"
@@ -58,9 +58,19 @@ export default function AboutSection() {
                     
                     {/* Checklist Matrix (7 cols) */}
                     <div className="sm:col-span-7 flex flex-col gap-8">
-                        <div className="bg-[#D26C66]/5 rounded-sm px-4 py-2 flex items-center gap-2  border border-[#D26C66]/10">
-                            <span className="text-[#D26C66] text-sm font-bold">10 Years</span>
-                            <span className="text-neutral-600 text-sm">of Development Experience</span>
+                        <div className="bg-[#D26C66]/[0.1] rounded-md px-4 py-2 flex items-center gap-2  border border-[#D26C66]/10">
+                            
+                            <div className="relative w-5 h-5 flex-shrink-0">
+                                <Image 
+                                src="/streamline-plump_document-certificate-remix.png" 
+                                alt="Icon"
+                                fill
+                                className="object-contain"
+                                />
+                            </div>
+
+                            <span className="text-neutral-600 text-sm">10 Years of Development <span className="text-[#D26C66] text-sm italic">Experience</span>
+                            </span>
                         </div>
                         <div className="sm:col-span-7 flex flex-col gap-2">
                             {points.map((text, idx) => (
@@ -76,14 +86,14 @@ export default function AboutSection() {
                     </div>
 
                     {/* Statistics Container Card (5 cols) */}
-                    <div className="sm:col-span-5 border border-dashed border-[#D26C66]/30 bg-[#D26C66]/[0.01] rounded-lg p-6 flex flex-col items-center justify-center text-center gap-4">
+                    <div className="sm:col-span-5 border border-dashed border-[#D26C66]/30 bg-[#D26C66]/[0.1] rounded-lg p-6 flex flex-col items-center justify-center text-center gap-4">
                     <div>
-                        <div className="text-[#D26C66] text-3xl font-extrabold tracking-tight">100%</div>
+                        <div className="text-[#D26C66] text-3xl  tracking-tight">100%</div>
                         <div className="text-neutral-500 text-xs mt-1">Success Rate</div>
                     </div>
                     <div className="w-full h-[1px] bg-neutral-100" />
                     <div>
-                        <div className="text-[#1E222D] text-3xl font-extrabold tracking-tight">3569+</div>
+                        <div className="text-[#D26C66] text-3xl  tracking-tight">3569+</div>
                         <div className="text-neutral-500 text-xs mt-1">Satisfied Client</div>
                     </div>
                     </div>

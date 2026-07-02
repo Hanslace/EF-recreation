@@ -40,10 +40,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-white relative">
+    <section id="contact" className="bg-white relative p-5 ">
       {/* Floating Success Notification Toast */}
       {showToast && (
-        <div className="fixed top-5 right-5 z-50 flex items-center gap-3 p-4 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 shadow-xl max-w-md animate-in slide-in-from-top-4 duration-300 transition-all">
+        <div className="fixed top-5 right-5 z-50 flex items-center gap-3  rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 shadow-xl max-w-md animate-in slide-in-from-top-4 duration-300 transition-all">
           <CheckCircle className="w-5 h-5 flex-shrink-0 text-emerald-600" />
           <p className="text-sm font-medium">Message sent successfully! We will contact you shortly.</p>
           <button type="button" onClick={() => setShowToast(false)} className="p-1 hover:bg-black/5 rounded-md ml-auto transition-colors">
@@ -52,10 +52,10 @@ export default function ContactSection() {
         </div>
       )}
 
-      <div className="bg-white py-16 px-6 md:px-12 lg:px-24 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="bg-white py-16   w-full md:max-w-[75vw] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
         {/* Left Column: Form Content */}
-        <div className="lg:col-span-7 flex flex-col gap-6 w-full">
+        <div className="lg:col-span-8 lg:pr-30 flex flex-col gap-6 w-full">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1E222D] tracking-tight mb-3">
               Talk to Our Team
@@ -162,40 +162,41 @@ export default function ContactSection() {
             </div>
 
             {/* Submit Button */}
-            <button type="submit" className="w-full sm:w-fit px-8 py-2.5 bg-[#D26C66] hover:bg-[#c25e55] text-white text-sm font-medium rounded-md transition-colors duration-200 mt-2">
+            <button type="submit" className="w-fit px-8 py-2.5 bg-[#D26C66] hover:bg-[#c25e55] text-white text-sm font-medium rounded-md transition-colors duration-200 mt-2">
               Submit
             </button>
           </form>
         </div>
 
         {/* Right Column: Cards Stack using Lucide Icons */}
-        <div className="lg:col-span-5 flex flex-col gap-6 w-full justify-center items-center">
-        {/* Email Instance: Opens default email client (or Gmail) pre-addressed */}
-        <a 
+        <div className="lg:col-span-4 flex flex-col gap-6 w-full justify-center items-center">
+          {/* Email Instance: Opens default email client (or Gmail) pre-addressed */}
+          <a 
             href="mailto:info@easyfringe.com"
-         className="w-full max-w-[360px] block transition-transform active:scale-[0.98]"
-        >
+            className="w-full max-w-[360px] block transition-transform active:scale-[0.98]"
+          >
             <ServiceCard 
-                Icon={Mail}
-                title="Email Us"
-                description="Simple drop us an email at hellothemetags@gmail.com and you'll receive a reply within 24 hours."
-                />
-        </a>
+              imageSrc="/contact/mdi_email-open.png"
+              title="Email Us"
+              description="Simple drop us an email at hellothemetags@gmail.com and you'll receive a reply within 24 hours."
+            />
+          </a>
 
-        <a 
+          {/* Address Instance: Opens Google Maps */}
+          <a 
             href="https://maps.app.goo.gl/8YCM2JBaBDARS9g37"
-            
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full max-w-[360px] block transition-transform active:scale-[0.98]"
-        >
+          >
             <ServiceCard 
-            Icon={MapPin}
-            title="Address"
-            description="Office 401, Building 1-C, Street 5, Zulfiqar Commercial, D.H.A. Phase- VIII, Karachi, Pakistan."
+              imageSrc="/contact/tdesign_location-filled.png"
+              title="Address"
+              description="Office 401, Building 1-C, Street 5, Zulfiqar Commercial, D.H.A. Phase- VIII, Karachi, Pakistan."
             />
-        </a>
+          </a>
         </div>
+
 
             
       </div>

@@ -8,9 +8,9 @@ interface SolutionsSectionProps {
 
 export default function SolutionsSection({ heading, description, features }: SolutionsSectionProps) {
   return (
-    <section className="bg-white py-16 px-6 md:px-12 lg:px-24 w-full">
+    <section className="bg-white p-5 my-10 w-full">
       {/* Header Container */}
-      <div className="max-w-7xl mx-auto mb-12 text-left">
+      <div className="md:max-w-[75vw] mx-auto mb-12 text-left">
         <h2 className="text-3xl md:text-4xl font-bold text-[#1E222D] tracking-tight mb-3">
           {heading}
         </h2>
@@ -20,7 +20,7 @@ export default function SolutionsSection({ heading, description, features }: Sol
       </div>
 
       {/* Responsive Grid Container */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {features.map((feature) => (
           <FeatureCard key={feature.id} feature={feature} />
         ))}
