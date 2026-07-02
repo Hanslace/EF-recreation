@@ -9,7 +9,7 @@ export default function HeroImage({ className = '' }: HeroImageProps) {
     // Added text-center and mx-auto to guarantee horizontal centering in all layouts
     <div className={`flex justify-center items-center w-full mx-auto ${className}`}>
       <Image
-        src="/hero_image.png"
+        src="/hero/hero_image.png"
         alt="Logo"
         width={600}
         height={426}
