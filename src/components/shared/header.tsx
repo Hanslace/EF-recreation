@@ -24,7 +24,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // NEW: Disable body scroll when mobile sidebar is open
+  // Disable body scroll when mobile sidebar is open
   useEffect(() => {
     if (openHeaderDrop) {
       document.body.style.overflow = "hidden";
@@ -32,7 +32,6 @@ export default function Header() {
       document.body.style.overflow = "";
     }
 
-    // Cleanup function to restore scrolling if component unmounts while open
     return () => {
       document.body.style.overflow = "";
     };
@@ -45,7 +44,6 @@ export default function Header() {
   ];
 
   return (
-    // Dynamic transition bindings switch background transparent/solid base on state tracking configurations
     <header 
       className={`sticky top-0 z-50 transition-all p-7 duration-300 ${
         isScrolled 
@@ -53,7 +51,6 @@ export default function Header() {
           : "bg-white shadow-none"
       }`}
     >
-      {/* Container background matches the header opacity */}
       <div className="md:w-[75vw] w-full mx-auto flex items-center gap-10 justify-between relative">
         
         <Image
@@ -70,7 +67,7 @@ export default function Header() {
             <Link
                 key={index}
                 href={btn.link}
-                className="flex items-center text-sm text-[#464646] justify-center hover:border-b-3 hover:border-[#D26C66] hover:text-[#D26C66] transition"
+                className="flex items-center text-sm justify-center transition pb-1 border-b-2 border-transparent text-[#464646] hover:text-[#D26C66] hover:border-[#D26C66]"
             >
                 {btn.text}
             </Link>
@@ -79,53 +76,51 @@ export default function Header() {
         
         <OrangeButton className="hidden md:flex hover:text-[#464646]" text="Get in Touch" link="#contact" />
 
-
         {/* CTA Button and Mobile Menu Controls */}
-        <div className="flex items-center md:hidden justify-end gap-3 min-w-[122px]">
-            {/* Desktop Only CTA Button */}
-
+        <div className="flex items-center md:hidden justify-end gap-3">
               <button
                   onClick={() => setOpenHeaderDrop(!openHeaderDrop)}
-                  className="text-3xl rounded-md px-3 py-1 text-[#464646] flex items-center justify-center relative z-50"
+                  className="text-3xl rounded-md px-2 py-1 text-[#464646] flex items-center justify-center relative z-50 transition hover:bg-gray-100"
                   aria-label="Toggle Navigation Menu"
               >
                   {openHeaderDrop ? <X size={24} /> : <Menu size={24} />}
               </button>
         </div>
 
-        {/* MOBILE SIDEBAR PORTAL PORT - Isolated completely from layout flow */}
-        <div className="md:hidden">
-          {/* Backdrop Overlay */}
+        {/* MOBILE SIDEBAR PORTAL PORT */}
+        < div className={`md:hidden ${openHeaderDrop ? "block" : "hidden"}`}>
+          {/* Modern Premium Blur Backdrop Overlay */}
           {openHeaderDrop && (
               <div 
-              className="fixed inset-0 bg-black/40 z-40 transition-opacity"
+              className="fixed inset-0 bg-black/15 backdrop-blur-sm z-40 transition-opacity duration-300"
               onClick={() => setOpenHeaderDrop(false)}
               />
           )}
 
-          {/* Side Drawer Sidebar */}
-          <div className={`fixed inset-y-0 right-0 h-screen w-64 bg-white border-l border-[#464646] p-6 flex flex-col gap-4 shadow-2xl z-40 transform transition-transform duration-300 ease-in-out ${openHeaderDrop ? 'translate-x-0' : 'translate-x-full'}`}>
-              {/* Top Spacer to clear the close icon zone */}
-              <div className="h-16 flex-shrink-0" />
+          {/* Compact Modern Sidebar (True Edge-to-Edge) */}
+          <div className={`fixed  inset-y-0 right-0 h-screen w-60 bg-white border-l border-gray-100 p-5 flex flex-col gap-6 shadow-2xl z-40 transform transition-transform duration-300 ease-in-out ${openHeaderDrop ? 'translate-x-0 ' : 'translate-x-full '}`}>
+              
+              {/* Top Spacer to push content gracefully past header elements */}
+              <div className="h-14 flex-shrink-0" />
 
-              {/* Navigation Links */}
-              <nav className="flex flex-col gap-3">
-              {buttons.map((btn, index) => (
+              {/* Combined Stack: Navigation Links + Button Underneath */}
+              <nav className="flex flex-col gap-1.5">
+                {buttons.map((btn, index) => (
                   <Link
-                  key={index}
-                  href={btn.link}
-                  onClick={() => setOpenHeaderDrop(false)}
-                  className="w-full h-11 text-[#464646] rounded-lg flex items-center justify-center hover:bg-[#464646] hover:text-white transition"
+                    key={index}
+                    href={btn.link}
+                    onClick={() => setOpenHeaderDrop(false)}
+                    className="w-full h-10 px-4 rounded-lg flex items-center justify-start text-sm text-[#464646] transition-all duration-200 hover:bg-gray-50 hover:text-black"
                   >
-                  {btn.text}
+                    {btn.text}
                   </Link>
-              ))}
+                ))}
+                
+                {/* Mobile CTA Button - Stacked natively directly under the last menu item */}
+                <div className="pt-4 mt-2 border-t border-gray-100">
+                  <OrangeButton className="w-full hover:text-[#464646]" text="Get in Touch" link="#contact" onClick={() => setOpenHeaderDrop(false)} />
+                </div>
               </nav>
-
-              {/* Mobile Only CTA Button inside Sidebar */}
-              <div className="mt-auto pt-4 border-t border-gray-100 flex justify-center">
-              <OrangeButton className="w-full hover:text-[#464646]" text="Get in Touch" link="#contact" onClick={() => setOpenHeaderDrop(false)} />
-              </div>
           </div>
         </div>
 
