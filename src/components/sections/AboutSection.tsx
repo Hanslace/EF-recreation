@@ -10,7 +10,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="p-5">
+    <section id="about" className="p-7">
         <div className="  py-10 flex flex-col lg:flex-row items-center justify-between gap-16 w-full md:w-[75vw] mx-auto ">
             
                 
@@ -82,7 +82,7 @@ export default function AboutSection() {
                         
                         </div>
                         
-                        <OrangeButton text="Get In Touch" link="#contact" />
+                        <OrangeButton className='hover:text-[#1E222D]' text="Get In Touch" link="#contact" />
                     </div>
 
                     {/* Statistics Container Card (5 cols) */}

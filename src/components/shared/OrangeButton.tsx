@@ -4,14 +4,15 @@ interface OrangeButtonProps {
   text: string;
   link: string;
   className?: string; // The "?" makes this property optional
+  onClick?: () => void; // Added optional onClick event handler
 }
 
-export default function OrangeButton({ text, link, className = '' }: OrangeButtonProps) {
+export default function OrangeButton({ text, link, className = '', onClick }: OrangeButtonProps) {
   return (
     <Link 
       href={link} 
-      // We removed the fixed w-[122px] from the main string and put it in a fallback check
-      className={`h-[43px] bg-[#D26C66] rounded-sm text-white font-bold text-sm leading-[16px] flex items-center justify-center hover:text-[#464646] transition ${
+      onClick={onClick} 
+      className={`h-[43px] bg-[#D26C66] rounded-sm text-white font-bold text-sm leading-[16px] flex items-center justify-center  transition ${
         className.includes('w-') ? className : `w-[122px] ${className}`
       }`}
     >

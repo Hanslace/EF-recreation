@@ -40,7 +40,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-white relative p-5 ">
+    <section id="contact" className="bg-white relative p-7 ">
       {/* Floating Success Notification Toast */}
       {showToast && (
         <div className="fixed top-5 right-5 z-50 flex items-center gap-3  rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 shadow-xl max-w-md animate-in slide-in-from-top-4 duration-300 transition-all">
@@ -162,7 +162,7 @@ export default function ContactSection() {
             </div>
 
             {/* Submit Button */}
-            <button type="submit" className="w-fit px-8 py-2.5 bg-[#D26C66] hover:bg-[#c25e55] text-white text-sm font-medium rounded-md transition-colors duration-200 mt-2">
+            <button type="submit" className="w-fit px-8 py-2.5 bg-[#D26C66] hover:text-[#1E222D]  hover:bg-[#c25e55] text-white text-sm font-medium rounded-md transition-colors duration-200 mt-2">
               Submit
             </button>
           </form>

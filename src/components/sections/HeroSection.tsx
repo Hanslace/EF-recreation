@@ -8,7 +8,6 @@ export default function HeroSection() {
 
           <div className="flex text-[#CCCCCC] mx-auto md:w-[75vw] md:flex-col lg:flex-row  items-center justify-between my-20">
 
-            <HeroImage className="hidden md:block lg:hidden mb-5" />
            
 
             <div className="flex flex-col gap-10 lg:max-w-[45%]">
@@ -27,7 +26,7 @@ export default function HeroSection() {
                 </p>
               </div>
 
-              <HeroImage className="md:hidden" />
+              <HeroImage className="lg:hidden" />
 
               <div className="flex gap-5 items-center ">
                 <OrangeButton text="Get in Touch" link="#contact" className="w-[120px] md:w-[175px] hover:text-[#1E222D]"/>

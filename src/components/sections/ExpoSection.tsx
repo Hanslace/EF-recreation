@@ -7,7 +7,7 @@ interface ExpoSectionProps {
 
 export default function ExpoSection({ title, description }: ExpoSectionProps) {
   return (
-    <section className='bg-[#1E222D] flex items-center justify-center px-5'>
+    <section className='bg-[#1E222D] flex items-center justify-center px-7'>
       <div className="relative md:w-[75vw] min-h-[30vh] flex items-center justify-center overflow-hidden">
                 
         {/* Background Graphic Image Layer - Anchored to the bottom */}

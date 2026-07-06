@@ -30,7 +30,7 @@ const servicesData = [
 
 
   return (
-    <section id="services" className="p-5 ">
+    <section id="services" className="p-7 ">
       <div className="w-full bg-white py-24  md:w-[75vw] mx-auto">
         
         {/* Header Block Section */}
